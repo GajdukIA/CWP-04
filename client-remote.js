@@ -24,6 +24,8 @@ client.on('data', (data) => {
         //console.log("COPY;"+process.argv[2]+";"+process.argv[3]);
         client.write("COPY;"+process.argv[2]+";"+process.argv[3]);
     }
+
+    
     if (data==="DONE"){
         client.write("ENCODE;"+process.argv[2]+";"+process.argv[3]+";MYTOPKEY");
     }

@@ -81,7 +81,9 @@ const server = net.createServer((client) => {
             a.pipe(cip).pipe(b);
             a.pipe(cip).pipe(c);
             client.write('CODED');
-        }else if(!err&&(client.type===clientString3)&&(pathToCopy!=="")&&(pathToOrigin!=="")&&(data.split(";",4)[0]==="DECODE")){
+        }
+
+        else if(!err&&(client.type===clientString3)&&(pathToCopy!=="")&&(pathToOrigin!=="")&&(data.split(";",4)[0]==="DECODE")){
             const cip = crypto.createDecipher('aes-128-cbc', key);
             let v=fs.createReadStream(locShifCopy);
             let t=fs.createWriteStream(locUnShifred);
